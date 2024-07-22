@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c;
+    color: #d3d3d3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 360px; /* Уменьшаем ширину для мобильного вида */
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.menu {
+    display: none;
+}
+
+.menu.active {
+    display: block;
+}
+
+.function {
+    background-color: #3c3c3c;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px; /* Меньший размер шрифта для мобильного вида */
+}
+
+/*.function.highlighted {*/
+/*    background-color: #555;*/
+/*}*/
+
+.input-container {
+    display: flex;
+    flex-direction: column; /* Оставляем элементы в столбик на мобильных устройствах */
+    margin-top: 10px;
+}
+
+.input-container input {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #3c3c3c;
+    color: #d3d3d3;
+    font-size: 14px; /* Меньший размер шрифта для мобильного вида */
+}
+
+.input-container .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Меньший размер шрифта для мобильного вида */
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px; /* Добавляем отступ сверху */
+}
+
+.error-message,
+.confirmation-message,
+.localization-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.buttons .button {
+    width: 95%;
+    margin-top: 10px; /* Добавляем отступ сверху */
+}
+
+@media (max-width: 400px) {
+    .function {
+        font-size: 12px; /* Уменьшаем размер шрифта для небольших экранов */
+    }
+
+    .input-container input,
+    .input-container .button {
+        font-size: 12px; /* Уменьшаем размер шрифта для небольших экранов */
+    }
+
+    .button {
+        font-size: 12px; /* Уменьшаем размер шрифта для кнопок */
+    }
+}

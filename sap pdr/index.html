@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP App Mockup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<p>Uwaga: Ten kod jest tylko i wyłącznie po to, żeby pokazać wzór dołączenia funkcji, którą proponuję. Kod nie jest gotowy do użytkowania, nie działa całkowicie, działają tylko funkcje, które są proponowane przeze mnie, czyli 6 -> 1 -> 4 -> 3, która odpowiada za uzupełnienie kuwet oraz wózków. Ta funkcja "Zwrot z produkcji" pokazuje, jaki materiał jest dostępny do zwrotu, pozostałe materiały są dodane dla wzoru.</p>
+
+
+
+<div class="container">
+    <!-- Main Menu -->
+    <div id="main-menu" class="menu active">
+        <div class="function" onclick="navigateTo('main-menu')">1 Przyjęcie</div>
+        <div class="function" onclick="navigateTo('main-menu')">2 Wydanie</div>
+        <div class="function" onclick="navigateTo('main-menu')">3 Ruchy wewnętrzne</div>
+        <div class="function" onclick="navigateTo('main-menu')">4 Inwentaryzacja</div>
+        <div class="function" onclick="navigateTo('main-menu')">5 Inne funkcje</div>
+        <div class="function highlighted" onclick="navigateTo('komplektacja-pociagu')">6 Komplektacja Pociągu</div>
+        <div class="function" onclick="navigateTo('zwrot-z-produkcji')">7 Zwrot z produkcji</div>
+<!--        <div class="function" onclick="navigateTo('zlecenie-menu')">8 Statusy</div>-->
+    </div>
+
+    <!-- Komplektacja Pociągu Menu -->
+    <div id="komplektacja-pociagu" class="menu">
+        <div class="function highlighted" onclick="navigateTo('sub-menu-2')">1 Uzupełnienie pociągu</div>
+        <div class="function" onclick="navigateTo('main-menu')">2 Opróżnienie pociągu</div>
+    </div>
+
+    <!-- Sub Menu 2 -->
+    <div id="sub-menu-2" class="menu">
+        <div class="function" onclick="navigateTo('main-menu')">1 Linia 1</div>
+        <div class="function" onclick="navigateTo('main-menu')">2 Linia 2</div>
+        <div class="function" onclick="navigateTo('main-menu')">3 Linia 3</div>
+        <div class="function highlighted" onclick="navigateTo('statusy-menu')">4 Linia 4A</div>
+        <div class="function" onclick="navigateTo('main-menu')">5 Linia 4B</div>
+    </div>
+
+    <!-- Statusy Menu -->
+    <div id="statusy-menu" class="menu">
+        <div class="function" onclick="navigateTo('materials-menu')">
+            1 zlecenie 2024/08/08 status ukonczonne
+        </div>
+        <div class="function" onclick="navigateTo('materials-menu')">
+            2 zlecenie 2024/08/08 status anulowane
+        </div>
+        <div class="function" onclick="navigateTo('materials-menu')">
+            3 zlecenie 2024/08/08 status rozpoczete
+        </div>
+        <div class="function" onclick="navigateTo('materials-menu')">
+            4 zlecenie 2024/08/08 status oczekuje
+        </div>
+    </div>
+
+    <!-- Zwrot z produkcji Menu -->
+    <div id="zwrot-z-produkcji" class="menu">
+        <div class="function" onclick="navigateTo('main-menu')">1 Linia 1</div>
+        <div class="function" onclick="navigateTo('main-menu')">2 Linia 2</div>
+        <div class="function" onclick="navigateTo('main-menu')">3 Linia 3</div>
+        <div class="function highlighted" onclick="navigateTo('return-materials-menu')">4 Linia 4</div>
+    </div>
+
+    <!-- Materials Menu -->
+    <div id="materials-menu" class="menu">
+        <div class="function" id="material-1" data-quantity="64" onclick="selectMaterial(1)">
+            1 Koronka do kotła - 64 szt
+        </div>
+        <div class="function" id="material-2" data-quantity="230" onclick="selectMaterial(2)">
+            2 Termostat - 230 szt
+        </div>
+        <div class="function" id="material-3" data-quantity="150" onclick="selectMaterial(3)">
+            3 Wymiennik - 150 szt
+        </div>
+        <div class="function" id="material-4" data-quantity="154" onclick="selectMaterial(4)">
+            4 Pompa - 154 szt
+        </div>
+        <div class="function" id="material-5" data-quantity="160" onclick="selectMaterial(5)">
+            5 Wymiennik Sanitarny - 160 szt
+        </div>
+        <div class="function" id="material-6" data-quantity="190" onclick="selectMaterial(6)">
+            6 Uszczelka - 190 szt
+        </div>
+        <div class="function" id="material-7" data-quantity="170" onclick="selectMaterial(7)">
+            7 Zawor Gazu - 170 szt
+        </div>
+        <div class="function" id="material-8" data-quantity="200" onclick="selectMaterial(8)">
+            8 Panel sterujacy - 200 szt
+        </div>
+        <div class="function" id="material-9" data-quantity="140" onclick="selectMaterial(9)">
+            9 Syfon - 140 szt
+        </div>
+    </div>
+
+    <!-- Return Materials Menu -->
+    <div id="return-materials-menu" class="menu">
+        <div class="function" id="return-material-1" data-quantity="150" onclick="selectReturnMaterial(1)">
+            1 Syfon - 150 szt
+        </div>
+        <div class="function" id="return-material-2" data-quantity="200" onclick="selectReturnMaterial(2)">
+            2 Sriuba - 200 szt
+        </div>
+        <div class="function" id="return-material-3" data-quantity="120" onclick="selectReturnMaterial(3)">
+            3 Wymiennik - 120 szt
+        </div>
+        <div class="function" id="return-material-4" data-quantity="170" onclick="selectReturnMaterial(4)">
+            4 Pompa - 170 szt
+        </div>
+        <div class="function" id="return-material-5" data-quantity="180" onclick="selectReturnMaterial(5)">
+            5 Bok - 180 szt
+        </div>
+        <div class="function" id="return-material-6" data-quantity="160" onclick="selectReturnMaterial(6)">
+            6 Obudowa - 160 szt
+        </div>
+        <div class="function" id="return-material-7" data-quantity="140" onclick="selectReturnMaterial(7)">
+            7 Rura 065 - 140 szt
+        </div>
+        <div class="function" id="return-material-8" data-quantity="200" onclick="selectReturnMaterial(8)">
+            8 Diafragma - 200 szt
+        </div>
+        <div class="function" id="return-material-9" data-quantity="150" onclick="selectReturnMaterial(9)">
+            9 Swiece - 150 szt
+        </div>
+    </div>
+
+    <!-- Localization Menu -->
+    <div id="localization-menu" class="menu">
+        <div id="localization-message" class="localization-message">Idź do - GL-005-01</div>
+        <div class="function" onclick="navigateTo('fill-material-menu')">OK</div>
+    </div>
+
+    <!-- Fill Material Menu -->
+    <div id="fill-material-menu" class="menu">
+        <div id="fill-material-message" class="localization-message">Uzupełnij materiał do KB000345345</div>
+        <div class="input-container">
+            <input id="quantity-input" type="number" placeholder="Wpisz ilość">
+            <button class="button" onclick="confirmQuantity()">OK</button>
+        </div>
+        <div id="error-message" class="error-message"></div>
+        <div id="confirmation-message" class="confirmation-message"></div>
+    </div>
+
+    <!-- Input and Buttons -->
+    <div class="buttons">
+        <div class="button" onclick="confirm()">F1 Potw.</div>
+        <div class="button" onclick="cancel()">F2 Anuluj</div>
+        <div class="button" onclick="back()">F3 Powrót</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
